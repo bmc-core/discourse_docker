@@ -22,7 +22,7 @@ templates:
 ## If you want Discourse to share a port with another webserver like Apache or nginx,
 ## see https://meta.discourse.org/t/17247 for details
 expose:
-  - "80:80"   # http
+  - "80:80" # http
   - "443:443" # https
 
 params:
@@ -50,7 +50,7 @@ env:
 
   ## TODO: The domain name this Discourse instance will respond to
   ## Required. Discourse will not work with a bare IP number.
-  DISCOURSE_HOSTNAME: 'discourse.chat-mail.uno'
+  DISCOURSE_HOSTNAME: "discourse.chat-mail.uno"
 
   ## Uncomment if you want the container to be started with the same
   ## hostname (-h option) as specified above (default "$hostname-$config")
@@ -58,7 +58,7 @@ env:
 
   ## TODO: List of comma delimited emails that will be made admin and developer
   ## on initial signup example 'user1@example.com,user2@example.com'
-  DISCOURSE_DEVELOPER_EMAILS: 'qq3205566@gmail.com,david_chou@jabil.com,chris_shih@jabil.com,luna_ye@jabil.com,irene_lai@jabil.com'
+  DISCOURSE_DEVELOPER_EMAILS: "qq3205566@gmail.com,david_chou@jabil.com,chris_shih@jabil.com,luna_ye@jabil.com,irene_lai@jabil.com"
 
   ## TODO: The SMTP mail server used to validate new accounts and send notifications
   # SMTP ADDRESS, username, and password are required
@@ -68,7 +68,7 @@ env:
   DISCOURSE_SMTP_USER_NAME: postmaster@chat-mail.uno
   #DISCOURSE_SMTP_PASSWORD: pa$$word
   #DISCOURSE_SMTP_ENABLE_START_TLS: true                        # (optional, default true)
-  DISCOURSE_SMTP_DOMAIN: discourse.example.com                  # (required by some providers)
+  DISCOURSE_SMTP_DOMAIN: discourse.example.com # (required by some providers)
   DISCOURSE_NOTIFICATION_EMAIL: noreply@discourse.chat-mail.uno # (address to send notifications from)
 
   ## If you added the Lets Encrypt template, uncomment below to get a free SSL certificate
@@ -111,16 +111,62 @@ run:
   - exec: echo "Beginning of custom commands"
   ## If you want to set the 'From' email address for your first registration, uncomment and change:
   ## After getting the first signup email, re-comment the line. It only needs to run once.
-  #- exec: rails r "SiteSetting.notification_email='info@unconfigured.discourse.org'"
-  - exec: rails r "SiteSetting.title='OpenBMC'"
-  - exec: rails r "SiteSetting.contact_email='qq3025566@gmail.com'"
-  # - exec: rails r "SiteSetting.site_description='???'"
-  # - exec: rails r "SiteSetting.short_site_description='???'"
-  # - exec: rails r "SiteSetting.site_contact_username='???'"
-  # - exec: rails r "SiteSetting.site_contact_group_name='???'"
-  # - exec: rails r "SiteSetting.company_name='???'"
-  # - exec: rails r "SiteSetting.governing_law='???'"
-  # - exec: rails r "SiteSetting.city_for_disputes='???'"
-  ## Branding ##
-  ## Basic Setup ##
+  - exec: rails r "/var/discourse/shared/standalone/scripts/apply-site-settings.rb"
+  # - exec: rails r "SiteSetting.top_menu='categories|latest|new|unread'"
+  # - exec: rails r "SiteSetting.desktop_category_page_style='categories_only'"
+  # - exec: rails r "SiteSetting.mobile_category_page_style='categories_only'"
+  # - exec: rails r "SiteSetting.default_dark_mode_color_scheme_id='1'"
+  # - exec: rails r "SiteSetting.page_loading_indicator='spinner'"
+  # - exec: rails r "SiteSetting.pending_users_reminder_delay_minutes='5'"
+  # - exec: rails r "SiteSetting.min_password_length='8'"
+  # - exec: rails r "SiteSetting.min_admin_password_length='8'"
+  # - exec: rails r "SiteSetting.min_post_length='5'"
+  # - exec: rails r "SiteSetting.min_first_post_length='5'"
+  # - exec: rails r "SiteSetting.min_personal_message_post_length='5'"
+  # - exec: rails r "SiteSetting.min_topic_title_length='5'"
+  # - exec: rails r "SiteSetting.default_emoji_reactions='+1|heart|tada|-1'"
+  # - exec: rails r "SiteSetting.default_invitee_trust_level='0'"
+  # - exec: rails r "SiteSetting.navigation_menu='header dropdown'"
+  # - exec: rails r "SiteSetting.default_navigation_menu_categories='2|3|4'"
+  # - exec: rails r "SiteSetting.default_sidebar_switch_panel_position='top'"
+  # - exec: rails r "SiteSetting.maximum_backups='7'"
+  # - exec: rails r "SiteSetting.remove_older_backups='7'"
+  # - exec: rails r "SiteSetting.backup_frequency='1'"
+  # - exec: rails r "SiteSetting.backup_time_of_day='16:00'"
+  # - exec: rails r "SiteSetting.include_thumbnails_in_backups='true'"
+  # - exec: rails r "SiteSetting.default_email_digest_frequency='1440'"
+  # - exec: rails r "SiteSetting.discourse_automation_enabled='true'"
+  # - exec: rails r "SiteSetting.chat_allowed_groups='1|2|11|-4'"
+  # - exec: rails r "SiteSetting.discourse_gamification_enabled='true'"
+  # - exec: rails r "SiteSetting.scorable_categories='4'"
+  # - exec: rails r "SiteSetting.like_given_score_value='0'"
+  # - exec: rails r "SiteSetting.user_invited_score_value='0'"
+  # - exec: rails r "SiteSetting.time_read_score_value='0'"
+  # - exec: rails r "SiteSetting.post_read_score_value='0'"
+  # - exec: rails r "SiteSetting.topic_created_score_value='0'"
+  # - exec: rails r "SiteSetting.post_created_score_value='5'"
+  # - exec: rails r "SiteSetting.flag_created_score_value='0'"
+  # - exec: rails r "SiteSetting.day_visited_score_value='0'"
+  # - exec: rails r "SiteSetting.reaction_received_score_value='0'"
+  # - exec: rails r "SiteSetting.reaction_given_score_value='0'"
+  # - exec: rails r "SiteSetting.chat_reaction_received_score_value='0'"
+  # - exec: rails r "SiteSetting.chat_reaction_given_score_value='0'"
+  # - exec: rails r "SiteSetting.chat_message_created_score_value='0'"
+  # - exec: rails r "SiteSetting.post_voting_enabled='true'"
+  # - exec: rails r "SiteSetting.flag_posts_voting_comments_allowed_groups='1'"
+  # - exec: rails r "SiteSetting.discourse_reactions_enabled='true'"
+  # - exec: rails r "SiteSetting.discourse_reactions_desaturated_reaction_panel='true'"
+  # - exec: rails r "SiteSetting.discourse_reactions_like_sync_enabled='false'"
+  # - exec: rails r "SiteSetting.show_who_marked_solved='true'"
+  # - exec: rails r "SiteSetting.accept_all_solutions_allowed_groups='1|2'"
+  # - exec: rails r "SiteSetting.title='OpenBMC'"
+  # - exec: rails r "SiteSetting.contact_email='david_chou@jabil.com'"
+  # - exec: rails r "SiteSetting.site_description='A community for developers and engineers working with OpenBMC firmware — collaborate, ask questions, and share your knowledge.'"
+  # - exec: rails r "SiteSetting.short_site_description='OpenBMC - The OpenBMC Firmware Community'"
+  # - exec: rails r "SiteSetting.notification_email='noreply@workspace.chat-mail.uno'"
+  # - exec: rails r "SiteSetting.login_required='true'"
+  # - exec: rails r "SiteSetting.clean_up_inactive_users_after_days='30'"
+  # - exec: rails r "SiteSetting.edit_history_visible_to_public='true'"
+  # - exec: rails r "SiteSetting.log_mail_processing_failures='true'"
+  # - exec: rails r "SiteSetting.invalidate_inactive_admin_email_after_days='30'"
   - exec: echo "End of custom commands"
