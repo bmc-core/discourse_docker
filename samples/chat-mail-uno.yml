@@ -30,7 +30,7 @@ params:
 
   ## Set db_shared_buffers to a max of 25% of the total memory.
   ## will be set automatically by bootstrap based on detected RAM, or you can override
-  #db_shared_buffers: "256MB"
+  db_shared_buffers: "2048MB"
 
   ## can improve sorting performance, but adds memory usage per-connection
   #db_work_mem: "40MB"
@@ -46,11 +46,11 @@ env:
 
   ## How many concurrent web requests are supported? Depends on memory and CPU cores.
   ## will be set automatically by bootstrap based on detected CPUs, or you can override
-  #UNICORN_WORKERS: 3
+  UNICORN_WORKERS: 4
 
   ## TODO: The domain name this Discourse instance will respond to
   ## Required. Discourse will not work with a bare IP number.
-  DISCOURSE_HOSTNAME: "discourse.chat-mail.uno"
+  DISCOURSE_HOSTNAME: "discourse.chat-mail.uno
 
   ## Uncomment if you want the container to be started with the same
   ## hostname (-h option) as specified above (default "$hostname-$config")
@@ -100,73 +100,17 @@ hooks:
         cd: $home/plugins
         cmd:
           - git clone https://github.com/discourse/docker_manager.git
-          - git clone https://github.com/bmc-core/discourse-gamification.git
-          - git clone https://github.com/bmc-core/discourse-ai.git
-          - git clone https://github.com/bmc-core/discourse-solved.git
-          - git clone https://github.com/bmc-core/discourse-post-voting.git
-          - git clone https://github.com/bmc-core/discourse-reactions.git
+          - git clone https://github.com/discourse/discourse-gamification.git
+          - git clone https://github.com/discourse/discourse-solved.git
+          - git clone https://github.com/discourse/discourse-post-voting.git
+          - git clone https://github.com/discourse/discourse-reactions.git
 
 ## Any custom commands to run after building
 run:
   - exec: echo "Beginning of custom commands"
   ## If you want to set the 'From' email address for your first registration, uncomment and change:
   ## After getting the first signup email, re-comment the line. It only needs to run once.
-  - exec: rails r "/var/discourse/shared/standalone/scripts/apply-site-settings.rb"
-  # - exec: rails r "SiteSetting.top_menu='categories|latest|new|unread'"
-  # - exec: rails r "SiteSetting.desktop_category_page_style='categories_only'"
-  # - exec: rails r "SiteSetting.mobile_category_page_style='categories_only'"
-  # - exec: rails r "SiteSetting.default_dark_mode_color_scheme_id='1'"
-  # - exec: rails r "SiteSetting.page_loading_indicator='spinner'"
-  # - exec: rails r "SiteSetting.pending_users_reminder_delay_minutes='5'"
-  # - exec: rails r "SiteSetting.min_password_length='8'"
-  # - exec: rails r "SiteSetting.min_admin_password_length='8'"
-  # - exec: rails r "SiteSetting.min_post_length='5'"
-  # - exec: rails r "SiteSetting.min_first_post_length='5'"
-  # - exec: rails r "SiteSetting.min_personal_message_post_length='5'"
-  # - exec: rails r "SiteSetting.min_topic_title_length='5'"
-  # - exec: rails r "SiteSetting.default_emoji_reactions='+1|heart|tada|-1'"
-  # - exec: rails r "SiteSetting.default_invitee_trust_level='0'"
-  # - exec: rails r "SiteSetting.navigation_menu='header dropdown'"
-  # - exec: rails r "SiteSetting.default_navigation_menu_categories='2|3|4'"
-  # - exec: rails r "SiteSetting.default_sidebar_switch_panel_position='top'"
-  # - exec: rails r "SiteSetting.maximum_backups='7'"
-  # - exec: rails r "SiteSetting.remove_older_backups='7'"
-  # - exec: rails r "SiteSetting.backup_frequency='1'"
-  # - exec: rails r "SiteSetting.backup_time_of_day='16:00'"
-  # - exec: rails r "SiteSetting.include_thumbnails_in_backups='true'"
-  # - exec: rails r "SiteSetting.default_email_digest_frequency='1440'"
-  # - exec: rails r "SiteSetting.discourse_automation_enabled='true'"
-  # - exec: rails r "SiteSetting.chat_allowed_groups='1|2|11|-4'"
-  # - exec: rails r "SiteSetting.discourse_gamification_enabled='true'"
-  # - exec: rails r "SiteSetting.scorable_categories='4'"
-  # - exec: rails r "SiteSetting.like_given_score_value='0'"
-  # - exec: rails r "SiteSetting.user_invited_score_value='0'"
-  # - exec: rails r "SiteSetting.time_read_score_value='0'"
-  # - exec: rails r "SiteSetting.post_read_score_value='0'"
-  # - exec: rails r "SiteSetting.topic_created_score_value='0'"
-  # - exec: rails r "SiteSetting.post_created_score_value='5'"
-  # - exec: rails r "SiteSetting.flag_created_score_value='0'"
-  # - exec: rails r "SiteSetting.day_visited_score_value='0'"
-  # - exec: rails r "SiteSetting.reaction_received_score_value='0'"
-  # - exec: rails r "SiteSetting.reaction_given_score_value='0'"
-  # - exec: rails r "SiteSetting.chat_reaction_received_score_value='0'"
-  # - exec: rails r "SiteSetting.chat_reaction_given_score_value='0'"
-  # - exec: rails r "SiteSetting.chat_message_created_score_value='0'"
-  # - exec: rails r "SiteSetting.post_voting_enabled='true'"
-  # - exec: rails r "SiteSetting.flag_posts_voting_comments_allowed_groups='1'"
-  # - exec: rails r "SiteSetting.discourse_reactions_enabled='true'"
-  # - exec: rails r "SiteSetting.discourse_reactions_desaturated_reaction_panel='true'"
-  # - exec: rails r "SiteSetting.discourse_reactions_like_sync_enabled='false'"
-  # - exec: rails r "SiteSetting.show_who_marked_solved='true'"
-  # - exec: rails r "SiteSetting.accept_all_solutions_allowed_groups='1|2'"
-  # - exec: rails r "SiteSetting.title='OpenBMC'"
-  # - exec: rails r "SiteSetting.contact_email='david_chou@jabil.com'"
-  # - exec: rails r "SiteSetting.site_description='A community for developers and engineers working with OpenBMC firmware — collaborate, ask questions, and share your knowledge.'"
-  # - exec: rails r "SiteSetting.short_site_description='OpenBMC - The OpenBMC Firmware Community'"
-  # - exec: rails r "SiteSetting.notification_email='noreply@workspace.chat-mail.uno'"
-  # - exec: rails r "SiteSetting.login_required='true'"
-  # - exec: rails r "SiteSetting.clean_up_inactive_users_after_days='30'"
-  # - exec: rails r "SiteSetting.edit_history_visible_to_public='true'"
-  # - exec: rails r "SiteSetting.log_mail_processing_failures='true'"
-  # - exec: rails r "SiteSetting.invalidate_inactive_admin_email_after_days='30'"
+  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-site-settings.rb"
+  - exec: cd /var/www/discourse && su discourse -c "bundle exec rake themes:install < /shared/theme.yml"
+  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-themes.rb"
   - exec: echo "End of custom commands"

@@ -30,7 +30,7 @@ params:
 
   ## Set db_shared_buffers to a max of 25% of the total memory.
   ## will be set automatically by bootstrap based on detected RAM, or you can override
-  #db_shared_buffers: "256MB"
+  db_shared_buffers: "2048MB"
 
   ## can improve sorting performance, but adds memory usage per-connection
   #db_work_mem: "40MB"
@@ -46,7 +46,7 @@ env:
 
   ## How many concurrent web requests are supported? Depends on memory and CPU cores.
   ## will be set automatically by bootstrap based on detected CPUs, or you can override
-  #UNICORN_WORKERS: 3
+  UNICORN_WORKERS: 4
 
   ## TODO: The domain name this Discourse instance will respond to
   ## Required. Discourse will not work with a bare IP number.
@@ -58,7 +58,7 @@ env:
 
   ## TODO: List of comma delimited emails that will be made admin and developer
   ## on initial signup example 'user1@example.com,user2@example.com'
-  DISCOURSE_DEVELOPER_EMAILS: 'qq3205566@gmail.com,david_chou@jabil.com,chris_shih@jabil.com,luna_ye@jabil.com,irene_lai@jabil.com'
+  DISCOURSE_DEVELOPER_EMAILS: "qq3205566@gmail.com,david_chou@jabil.com,chris_shih@jabil.com,luna_ye@jabil.com,irene_lai@jabil.com"
 
   ## TODO: The SMTP mail server used to validate new accounts and send notifications
   # SMTP ADDRESS, username, and password are required
@@ -69,7 +69,7 @@ env:
   #DISCOURSE_SMTP_PASSWORD: pa$$word
   #DISCOURSE_SMTP_ENABLE_START_TLS: true                      # (optional, default true)
   DISCOURSE_SMTP_DOMAIN: discourse.example.com                # (required by some providers)
-  DISCOURSE_NOTIFICATION_EMAIL: noreply@discourse.bmccore.com # (address to send notifications from)
+  DISCOURSE_NOTIFICATION_EMAIL: noreply@community.bmccore.com
 
   ## If you added the Lets Encrypt template, uncomment below to get a free SSL certificate
   LETSENCRYPT_ACCOUNT_EMAIL: me@example.com
@@ -100,19 +100,17 @@ hooks:
         cd: $home/plugins
         cmd:
           - git clone https://github.com/discourse/docker_manager.git
-          - git clone https://github.com/bmc-core/discourse-gamification.git
-          - git clone https://github.com/bmc-core/discourse-ai.git
-          - git clone https://github.com/bmc-core/discourse-solved.git
-          - git clone https://github.com/bmc-core/discourse-post-voting.git
-          - git clone https://github.com/bmc-core/discourse-reactions.git
+          - git clone https://github.com/discourse/discourse-gamification.git
+          - git clone https://github.com/discourse/discourse-solved.git
+          - git clone https://github.com/discourse/discourse-post-voting.git
+          - git clone https://github.com/discourse/discourse-reactions.git
 
 ## Any custom commands to run after building
 run:
   - exec: echo "Beginning of custom commands"
   ## If you want to set the 'From' email address for your first registration, uncomment and change:
   ## After getting the first signup email, re-comment the line. It only needs to run once.
-  #- exec: rails r "SiteSetting.notification_email='info@unconfigured.discourse.org'"
+  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-site-settings.rb"
+  - exec: cd /var/www/discourse && su discourse -c "bundle exec rake themes:install < /shared/theme.yml"
+  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-themes.rb"
   - exec: echo "End of custom commands"
-  - exec: rails r "SiteSetting.title='OpenBMC'"
-  - exec: rails r "SiteSetting.contact_email='qq3025566@gmail.com'"
-  - exec: rails r "SiteSetting.notification_email='info@unconfigured.discourse.org'"
