@@ -91,6 +91,12 @@ volumes:
   - volume:
       host: /var/discourse/shared/standalone/log/var-log
       guest: /var/log
+  - volume:
+      host: /var/discourse/icons
+      guest: /icons
+    - volume:
+      host: /var/discourse/scripts
+      guest: /scripts
 
 ## Plugins go here
 ## see https://meta.discourse.org/t/19157 for details
@@ -110,8 +116,7 @@ run:
   - exec: echo "Beginning of custom commands"
   ## If you want to set the 'From' email address for your first registration, uncomment and change:
   ## After getting the first signup email, re-comment the line. It only needs to run once.
-  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-site-settings.rb"
+  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /scripts/apply-site-settings.rb"
   - exec: cd /var/www/discourse && su discourse -c "bundle exec rake themes:install < /shared/theme.yml"
-  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-themes.rb"
-  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-logo.rb"
+  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /scripts/apply-rest-settings.rb"
   - exec: echo "End of custom commands"
