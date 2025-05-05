@@ -18,13 +18,3 @@ if lb
     period_filter_disabled: false
   )
 end
-
-# logo
-upload = UploadCreator.new(File.new('/icons/logo_436x89.png'), 'logo_436x89.png').create_for(nil);
-SiteSetting.site_logo_url = upload.url
-
-upload = UploadCreator.new(File.new('/icons/logo_small.png'), 'logo_small.png').create_for(nil);
-SiteSetting.site_logo_small_url = upload.url
-
-upload = UploadCreator.new(File.new('/icons/favicon_32x32.png'), 'favicon_32x32.png').create_for(nil);
-SiteSetting.site_favicon_url = upload.url
