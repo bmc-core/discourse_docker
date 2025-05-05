@@ -100,6 +100,9 @@ volumes:
   - volume:
       host: /var/discourse/scripts
       guest: /shared/scripts
+  - volume:
+      host: /var/discourse/scripts/after_initialize.rb
+      guest: /var/www/discourse/config/initializers/after_site_settings.rb
 
 ## Plugins go here
 ## see https://meta.discourse.org/t/19157 for details
