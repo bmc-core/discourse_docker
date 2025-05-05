@@ -1,5 +1,5 @@
 # themes
-theme = Theme.find_by(name: "BMCCore")
+theme = Theme.find_by(name: "BMCCore theme")
 
 if theme
   SiteSetting.default_theme_id = theme.id
