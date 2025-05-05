@@ -100,9 +100,6 @@ volumes:
   - volume:
       host: /var/discourse/scripts
       guest: /shared/scripts
-  - volume:
-      host: /var/discourse/scripts/after_initialize.rb
-      guest: /var/www/discourse/config/initializers/after_site_settings.rb
 
 ## Plugins go here
 ## see https://meta.discourse.org/t/19157 for details
@@ -125,4 +122,5 @@ run:
   - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-site-settings.rb"
   - exec: cd /var/www/discourse && su discourse -c "bundle exec rake themes:install < /shared/themes.yml"
   - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-rest-settings.rb"
+  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-logo-settings.rb"
   - exec: echo "End of custom commands"
