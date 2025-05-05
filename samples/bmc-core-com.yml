@@ -22,7 +22,7 @@ templates:
 ## If you want Discourse to share a port with another webserver like Apache or nginx,
 ## see https://meta.discourse.org/t/17247 for details
 expose:
-  - "80:80"   # http
+  - "80:80" # http
   - "443:443" # https
 
 params:
@@ -50,7 +50,7 @@ env:
 
   ## TODO: The domain name this Discourse instance will respond to
   ## Required. Discourse will not work with a bare IP number.
-  DISCOURSE_HOSTNAME: 'community.bmccore.com'
+  DISCOURSE_HOSTNAME: "community.bmccore.com"
 
   ## Uncomment if you want the container to be started with the same
   ## hostname (-h option) as specified above (default "$hostname-$config")
@@ -68,7 +68,7 @@ env:
   DISCOURSE_SMTP_USER_NAME: postmaster@bmccore.com
   #DISCOURSE_SMTP_PASSWORD: pa$$word
   #DISCOURSE_SMTP_ENABLE_START_TLS: true                      # (optional, default true)
-  DISCOURSE_SMTP_DOMAIN: discourse.example.com                # (required by some providers)
+  DISCOURSE_SMTP_DOMAIN: discourse.example.com # (required by some providers)
   DISCOURSE_NOTIFICATION_EMAIL: noreply@community.bmccore.com
 
   ## If you added the Lets Encrypt template, uncomment below to get a free SSL certificate

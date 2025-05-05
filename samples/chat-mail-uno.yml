@@ -50,7 +50,7 @@ env:
 
   ## TODO: The domain name this Discourse instance will respond to
   ## Required. Discourse will not work with a bare IP number.
-  DISCOURSE_HOSTNAME: "discourse.chat-mail.uno
+  DISCOURSE_HOSTNAME: "discourse.chat-mail.uno"
 
   ## Uncomment if you want the container to be started with the same
   ## hostname (-h option) as specified above (default "$hostname-$config")
@@ -67,9 +67,9 @@ env:
   DISCOURSE_SMTP_PORT: 587
   DISCOURSE_SMTP_USER_NAME: postmaster@chat-mail.uno
   #DISCOURSE_SMTP_PASSWORD: pa$$word
-  #DISCOURSE_SMTP_ENABLE_START_TLS: true                        # (optional, default true)
+  #DISCOURSE_SMTP_ENABLE_START_TLS: true                      # (optional, default true)
   DISCOURSE_SMTP_DOMAIN: discourse.example.com # (required by some providers)
-  DISCOURSE_NOTIFICATION_EMAIL: noreply@discourse.chat-mail.uno # (address to send notifications from)
+  DISCOURSE_NOTIFICATION_EMAIL: noreply@discourse.chat-mail.uno
 
   ## If you added the Lets Encrypt template, uncomment below to get a free SSL certificate
   LETSENCRYPT_ACCOUNT_EMAIL: me@example.com
@@ -113,4 +113,5 @@ run:
   - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-site-settings.rb"
   - exec: cd /var/www/discourse && su discourse -c "bundle exec rake themes:install < /shared/theme.yml"
   - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-themes.rb"
+  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-logo.rb"
   - exec: echo "End of custom commands"
