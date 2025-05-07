@@ -5,37 +5,54 @@ BMCCore theme:
   add_to_all_themes: true
 
 # Components
-New Topic Header Button:
-  url: https://github.com/bmc-core/discourse-new-topic-header-button-component.git
-  branch: master
+New Topic Header Button :
+  # url: https://github.com/bmc-core/discourse-new-topic-header-button-component.git
+  # branch: master
+  url: https://github.com/bmc-core/discourse-new-topic-button-theme-component.git
+  branch: main
   add_to_all_themes: true
 
 Right Sidebar Blocks:
-  url: https://github.com/bmc-core/discourse-right-sidebar-blocks-component.git
-  branch: master
+  # url: https://github.com/bmc-core/discourse-right-sidebar-blocks-component.git
+  # branch: master
+  url: https://github.com/bmc-core/discourse-right-sidebar-blocks.git
+  branch: main
   add_to_all_themes: true
 
 Custom Header Links Icons:
-  url: https://github.com/bmc-core/discourse-custom-header-links-icons-component.git
-  branch: master
+  # url: https://github.com/bmc-core/discourse-custom-header-links-icons-component.git
+  # branch: master
+  url: https://github.com/bmc-core/discourse-icon-header-links.git
+  branch: main
   add_to_all_themes: true
 
 Character Count:
-  url: https://github.com/bmc-core/discourse-character-count-component.git
-  branch: master
+  # url: https://github.com/bmc-core/discourse-character-count-component.git
+  # branch: master
+  url: https://github.com/bmc-core/discourse-tc-character-count.git
+  branch: main
   add_to_all_themes: true
 
 Breadcrumb Links:
-  url: https://github.com/bmc-core/discourse-breadcrumb-links-component.git
-  branch: master
+  # url: https://github.com/bmc-core/discourse-breadcrumb-links-component.git
+  # branch: master
+  url: https://github.com/bmc-core/discourse-breadcrumb-links.git
+  branch: main
   add_to_all_themes: true
 
 Gifs:
-  url: https://github.com/bmc-core/discourse-gifs-component.git
-  branch: master
+  #url: https://github.com/bmc-core/discourse-gifs-component.git
+  #branch: master
+  url: https://github.com/bmc-core/discourse-gifs.git
+  branch: main
   add_to_all_themes: true
 
 Newcomer Popup Message:
   url: https://github.com/bmc-core/discourse-newcomer-popup-message-component.git
   branch: master
+  add_to_all_themes: true
+
+Header Search:
+  url: https://github.com/bmc-core/discourse-header-search-component.git
+  branch: main
   add_to_all_themes: true
