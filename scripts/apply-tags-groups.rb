@@ -1,6 +1,6 @@
 require 'yaml'
 
-tag_group_data = YAML.load_file(Rails.root.join('samples/tag_groups.yml'))
+tag_group_data = YAML.load_file(Rails.root.join('shared', 'tag_groups.yml'))
 
 tag_group_data.each do |group_info|
   tags = group_info['tags'].map do |tag_name|
