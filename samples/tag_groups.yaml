@@ -1,0 +1,29 @@
+- name: Knowledge Hub
+  one_per_topic: false
+  tags:
+    - howto
+    - tool
+    - workflow
+    - reference
+    - case-study
+    - opensource
+
+- name: Project Managemant
+  one_per_topic: false
+  tags:
+    - milestone
+    - release-plan
+    - meeting-notes
+    - dependency
+    - resource-allocation
+
+- name: Infrastructure
+  one_per_topic: false
+  tags:
+    - jenkins
+    - gitlab
+    - boardfarm
+    - pdu
+    - serial
+    - network
+    - deployment
