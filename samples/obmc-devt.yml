@@ -50,7 +50,7 @@ env:
 
   ## TODO: The domain name this Discourse instance will respond to
   ## Required. Discourse will not work with a bare IP number.
-  DISCOURSE_HOSTNAME: "discourse.chat-mail.uno"
+  DISCOURSE_HOSTNAME: "workspace.chat-mail.uno"
 
   ## Uncomment if you want the container to be started with the same
   ## hostname (-h option) as specified above (default "$hostname-$config")
@@ -69,7 +69,7 @@ env:
   #DISCOURSE_SMTP_PASSWORD: pa$$word
   #DISCOURSE_SMTP_ENABLE_START_TLS: true                      # (optional, default true)
   DISCOURSE_SMTP_DOMAIN: discourse.example.com # (required by some providers)
-  DISCOURSE_NOTIFICATION_EMAIL: noreply@discourse.chat-mail.uno
+  DISCOURSE_NOTIFICATION_EMAIL: noreply@workspace.chat-mail.uno # (address to send notifications from)
 
   ## If you added the Lets Encrypt template, uncomment below to get a free SSL certificate
   LETSENCRYPT_ACCOUNT_EMAIL: me@example.com
@@ -109,10 +109,10 @@ hooks:
         cd: $home/plugins
         cmd:
           - git clone https://github.com/discourse/docker_manager.git
-          - git clone https://github.com/discourse/discourse-gamification.git
-          - git clone https://github.com/discourse/discourse-solved.git
-          - git clone https://github.com/discourse/discourse-post-voting.git
-          - git clone https://github.com/discourse/discourse-reactions.git
+          - git clone https://github.com/bmc-core/discourse-gamification.git
+          - git clone https://github.com/bmc-core/discourse-solved.git
+          - git clone https://github.com/bmc-core/discourse-post-voting.git
+          - git clone https://github.com/bmc-core/discourse-reactions.git
 
 ## Any custom commands to run after building
 run:

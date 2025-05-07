@@ -907,12 +907,37 @@ then
   web_file=containers/$app_name.yml
   data_file=containers/$data_name.yml
 else
-  app_name=app
-  data_name=app
-  web_template=samples/standalone.yml
-  data_template=""
-  web_file=containers/$app_name.yml
-  data_file=containers/$app_name.yml
+  case "${1}" in
+  prod)
+    app_name=obmc-prod
+    data_name=obmc-prod
+    web_template=samples/obmc-prod.yml
+    data_template=""
+    web_file=containers/$app_name.yml\
+    ;;
+  stag)
+    app_name=obmc-stag
+    data_name=obmc-stag
+    web_template=samples/obmc-stag.yml
+    data_template=""
+    web_file=containers/$app_name.yml\
+    ;;
+  devt)
+    app_name=obmc-devt
+    data_name=obmc-devt
+    web_template=samples/obmc-devt.yml
+    data_template=""
+    web_file=containers/$app_name.yml\
+    ;;
+  *)
+    app_name=app
+    data_name=app
+    web_template=samples/standalone.yml
+    data_template=""
+    web_file=containers/$app_name.yml
+    data_file=containers/$app_name.yml
+    ;;
+  esac
 fi
 changelog=/tmp/changelog
 
