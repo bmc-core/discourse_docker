@@ -1,11 +1,27 @@
-upload = UploadCreator.new(File.new('/shared/icons/logo.png'), 'logo.png').create_for(nil);
-SiteSetting.site_logo_url = upload.url
+# Logo
+file_path = "/shared/icons/logo.png"
+file = File.open(file_path)
+upload_creator = UploadCreator.new(file, "logo.png")
+upload = upload_creator.create_for(Discourse.system_user.id)
+SiteSetting.logo = upload
 
-upload = UploadCreator.new(File.new('/shared/icons/logo_small.png'), 'logo_small.png').create_for(nil);
-SiteSetting.site_logo_small_url = upload.url
+# Logo small
+file_path = "/shared/icons/small_logo.png"
+file = File.open(file_path)
+upload_creator = UploadCreator.new(file, "small_logo.png")
+upload = upload_creator.create_for(Discourse.system_user.id)
+SiteSetting.logo_small = upload
 
-upload = UploadCreator.new(File.new('/shared/icons/favicon.png'), 'favicon.png').create_for(nil);
-SiteSetting.site_favicon_url = upload.url
+# favicon
+file_path = "/shared/icons/favicon.png"
+file = File.open(file_path)
+upload_creator = UploadCreator.new(file, "favicon.png")
+upload = upload_creator.create_for(Discourse.system_user.id)
+SiteSetting.favicon = upload
 
-upload = UploadCreator.new(File.new('/shared/icons/large_icon.png'), 'large_icon.png').create_for(nil);
-SiteSetting.site_large_icon_url = upload.url
+# Large icon
+file_path = "/shared/icons/large_icon.png"
+file = File.open(file_path)
+upload_creator = UploadCreator.new(file, "large_icon.png")
+upload = upload_creator.create_for(Discourse.system_user.id)
+SiteSetting.large_icon = upload
