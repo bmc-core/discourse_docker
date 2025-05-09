@@ -1,21 +1,101 @@
-- name: Knowledge Hub
+- name: Announcement
   one_per_topic: false
   tags:
-    - howto
-    - tool
-    - workflow
-    - reference
-    - case-study
-    - opensource
+    - announcement
 
-- name: Project Managemant
+- name: Getting Started
   one_per_topic: false
   tags:
-    - milestone
-    - release-plan
-    - meeting-notes
-    - dependency
-    - resource-allocation
+    - newbie
+    - faq
+    - community
+    - intro
+
+- name: OpenBMC Core
+  one_per_topic: false
+  tags:
+    - yocto
+    - dbus
+    - service
+    - aspeed
+    - upstream
+
+- name: Redfish
+  one_per_topic: false
+  tags:
+    - redfish
+    - redfish-api
+    - redfish-schema
+
+- name: PLDM
+  one_per_topic: false
+  tags:
+    - pldm-monitoring-control
+    - pldm-update
+    - pldm-fru
+
+- name: WebUI
+  one_per_topic: true
+  tags:
+    - RBAC
+    - UI-error
+    - upload-fail
+    - phosphor-webui
+    - timeout
+    - invalid-input
+
+- name: BIOS / UEFI
+  one_per_topic: false
+  tags:
+    - bios
+    - uefi
+    - acpi
+    - secure-boot-chain
+    - firmware-integration
+
+- name: Security
+  one_per_topic: false
+  tags:
+    - cve
+    - sbom
+    - coverity
+
+- name: PRoT
+  one_per_topic: false
+  tags:
+    - rot-provision
+    - rot-update
+    - rot-recovery
+    - rot-logging
+
+- name: Diagnostics
+  one_per_topic: false
+  tags:
+    - sensor
+    - uart
+    - jtag
+    - post-code
+    - log
+    - lpc
+
+- name: Testing & Automation
+  one_per_topic: false
+  tags:
+    - pytest
+    - robot-framework
+    - coverage
+    - autotest
+    - pipeline
+    - test-fail
+
+- name: Firmware Build
+  one_per_topic: false
+  tags:
+    - signed-image
+    - ota
+    - release
+    - manifest
+    - build-error
 
 - name: Infrastructure
   one_per_topic: false
@@ -27,3 +107,22 @@
     - serial
     - network
     - deployment
+
+- name: Project Managemant
+  one_per_topic: false
+  tags:
+    - milestone
+    - release-plan
+    - meeting-notes
+    - dependency
+    - resource-allocation
+
+- name: Knowledge Hub
+  one_per_topic: false
+  tags:
+    - howto
+    - tool
+    - workflow
+    - reference
+    - case-study
+    - opensource
