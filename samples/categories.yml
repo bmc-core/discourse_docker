@@ -1,0 +1,876 @@
+categories:
+  - name: "Announcement"
+    color: "BF1E2E"
+    user_id: Discourse.system_user.id
+    description: "This category is designated for official updates, important news, and announcements from the team."
+    style_type: "emoji"
+    emoji: "police_car_light"
+    position: 1
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "Announcement"
+    security:
+      - group: "everyone"
+        permission_type: 2
+
+  - name: "Getting Started"
+    color: "F1592A"
+    user_id: Discourse.system_user.id
+    description: "Onboarding and setup help for newcomers, including build instructions, FAQs, and community resources."
+    position: 2
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "Getting Started"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "FAQ"
+        color: "f98966"
+        user_id: Discourse.system_user.id
+        position: 3
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Getting Started"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Resources"
+        color: "f98966"
+        user_id: Discourse.system_user.id
+        position: 4
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Getting Started"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Setup"
+        color: "f98966"
+        user_id: Discourse.system_user.id
+        position: 5
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Getting Started"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "OpenBMC Core"
+    color: "F7941D"
+    user_id: Discourse.system_user.id
+    description: "Discussions on OpenBMC core architecture and development, including Yocto, D-Bus, service integration, and platform support."
+    position: 6
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "OpenBMC Core"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "Development"
+        color: "ffd438"
+        user_id: Discourse.system_user.id
+        position: 7
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "OpenBMC Core"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Debugging"
+        color: "ffd438"
+        user_id: Discourse.system_user.id
+        position: 8
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "OpenBMC Core"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "Redfish"
+    color: "9EB83B"
+    user_id: Discourse.system_user.id
+    description: "Topics related to the development of Redfish protocol, schema design, and API integration for hardware management."
+    position: 9
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "Redfish"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "Development"
+        color: "d3ee68"
+        user_id: Discourse.system_user.id
+        position: 10
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Redfish"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Redfish Protocol"
+        color: "d3ee68"
+        user_id: Discourse.system_user.id
+        position: 11
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Redfish"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Redfish schema & API"
+        color: "d3ee68"
+        user_id: Discourse.system_user.id
+        position: 12
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Redfish"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Debugging"
+        color: "d3ee68"
+        user_id: Discourse.system_user.id
+        position: 13
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Redfish"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "PLDM"
+    color: "12A89D"
+    user_id: Discourse.system_user.id
+    description: "Discussions on PLDM protocol implementation, covering platform monitoring, control, firmware updates, and FRU management."
+    position: 14
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "PLDM"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "PLDM Platform Monitor and Control"
+        color: "3de1d6"
+        user_id: Discourse.system_user.id
+        position: 15
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "PLDM"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "PLDM Update"
+        color: "3de1d6"
+        user_id: Discourse.system_user.id
+        position: 16
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "PLDM"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "PLDM FRU"
+        color: "3de1d6"
+        user_id: Discourse.system_user.id
+        position: 17
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "PLDM"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "WebUI"
+    color: "3AB54A"
+    user_id: Discourse.system_user.id
+    description: "Development and debugging of the OpenBMC Web UI, including login and access issues, UI errors, and firmware/image operations."
+    position: 18
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "WebUI"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "UI & Interaction"
+        color: "6fa576"
+        user_id: Discourse.system_user.id
+        position: 19
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "WebUI"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Login & Access"
+        color: "6fa576"
+        user_id: Discourse.system_user.id
+        position: 20
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "WebUI"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Firmware & Image Operations"
+        color: "6fa576"
+        user_id: Discourse.system_user.id
+        position: 21
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "WebUI"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Debugging"
+        color: "6fa576"
+        user_id: Discourse.system_user.id
+        position: 22
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "WebUI"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "BIOS / UEFI"
+    color: "25AAE2"
+    user_id: Discourse.system_user.id
+    description: "Discussions on BIOS or UEFI firmware development and integration, including boot processes, hardware configuration, and feature design."
+    position: 23
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "BIOS / UEFI"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "Feature Design"
+        color: "5e9fba"
+        user_id: Discourse.system_user.id
+        position: 24
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "BIOS / UEFI"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Integration"
+        color: "5e9fba"
+        user_id: Discourse.system_user.id
+        position: 25
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "BIOS / UEFI"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Debugging"
+        color: "5e9fba"
+        user_id: Discourse.system_user.id
+        position: 26
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "BIOS / UEFI"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "Security"
+    color: "0E76BD"
+    user_id: Discourse.system_user.id
+    description: "Security-focused topics, including CVE management, SBOM (Software Bill of Materials), and Coverity code review."
+    position: 27
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "Security"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "CVE"
+        color: "628bea"
+        user_id: Discourse.system_user.id
+        position: 28
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Security"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "SBOM"
+        color: "628bea"
+        user_id: Discourse.system_user.id
+        position: 29
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Security"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Coverity"
+        color: "628bea"
+        user_id: Discourse.system_user.id
+        position: 30
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Security"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "PRoT"
+    color: "652D90"
+    user_id: Discourse.system_user.id
+    description: "Discussions on Root of Trust (RoT) implementations, including provisioning, updates, recovery, and logging."
+    position: 31
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "PRoT"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "Provision"
+        color: "A57FC3"
+        user_id: Discourse.system_user.id
+        position: 32
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "PRoT"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Update"
+        color: "A57FC3"
+        user_id: Discourse.system_user.id
+        position: 33
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "PRoT"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Recovery"
+        color: "A57FC3"
+        user_id: Discourse.system_user.id
+        position: 34
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "PRoT"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Logging"
+        color: "A57FC3"
+        user_id: Discourse.system_user.id
+        position: 35
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "PRoT"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "Diagnostics"
+    color: "92278F"
+    user_id: Discourse.system_user.id
+    description: "Tools and methods for diagnostics, including sensors, POST, UART, logs, and other techniques for hardware or firmware debugging."
+    position: 36
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "Diagnostics"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "Sensors"
+        color: "CD42C8"
+        user_id: Discourse.system_user.id
+        position: 37
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Diagnostics"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "POST"
+        color: "CD42C8"
+        user_id: Discourse.system_user.id
+        position: 38
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Diagnostics"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "UART"
+        color: "CD42C8"
+        user_id: Discourse.system_user.id
+        position: 39
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Diagnostics"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Logs"
+        color: "CD42C8"
+        user_id: Discourse.system_user.id
+        position: 40
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Diagnostics"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "Testing & Automation"
+    color: "ED207B"
+    user_id: Discourse.system_user.id
+    description: "Discussions on test development, regression testing, CI/CD pipeline integration, and test automation tools."
+    position: 41
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "Testing & Automation"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "Test Dev"
+        color: "ec6aa4"
+        user_id: Discourse.system_user.id
+        position: 42
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Testing & Automation"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Regression"
+        color: "ec6aa4"
+        user_id: Discourse.system_user.id
+        position: 43
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Testing & Automation"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "CI/CD Pipeline"
+        color: "ec6aa4"
+        user_id: Discourse.system_user.id
+        position: 44
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Testing & Automation"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "Firmware Build"
+    color: "8C6238"
+    user_id: Discourse.system_user.id
+    description: "Discussions on firmware building, image signing, OTA deployment, troubleshooting build errors, and release preparation."
+    position: 45
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "Firmware Build"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "Image Signing"
+        color: "b08f6d"
+        user_id: Discourse.system_user.id
+        position: 46
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Firmware Build"
+        security:
+          - group: "everyone"
+            permission_type: 1
+ 
+      - name: "OTA Deployment"
+        color: "b08f6d"
+        user_id: Discourse.system_user.id
+        position: 47
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Firmware Build"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "Infrastructure"
+    color: "585052"
+    user_id: Discourse.system_user.id
+    description: "Development and maintenance of infrastructure tools, including CI tools, Boardfarm, remote access, and deployment solutions."
+    position: 48
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "Infrastructure"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "CI Infra"
+        color: "7c6e71"
+        user_id: Discourse.system_user.id
+        position: 49
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Infrastructure"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Board Control"
+        color: "7c6e71"
+        user_id: Discourse.system_user.id
+        position: 50
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Infrastructure"
+        security:
+          - group: "everyone"
+            permission_type: 1
+ 
+      - name: "Access & Debugging"
+        color: "7c6e71"
+        user_id: Discourse.system_user.id
+        position: 51
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Infrastructure"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  - name: "Project Managemant"
+    color: "808281"
+    user_id: Discourse.system_user.id
+    description: "Discussions on project management, including roadmap planning, release coordination, cross-team collaboration, and resource allocation."
+    position: 52
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "Project Managemant"
+    security:
+      - group: "everyone"
+        permission_type: 1
+
+  - name: "Knowledge Hub"
+    color: "B3B5B4"
+    user_id: Discourse.system_user.id
+    description: "A space for sharing technical articles, how-to guides, development tools, and best practices for knowledge sharing and learning."
+    position: 53
+    show_subcategory_list: true
+    subcategory_list_style: "boxes_with_featured_topics"
+    default_list_filter: "all"
+    custom_fields:
+      only_post_voting_in_this_category: true
+      enable_accepted_answers: "true"
+    tag_groups:
+      - "Knowledge Hub"
+    security:
+      - group: "everyone"
+        permission_type: 1
+    subcategories:
+      - name: "Case Study"
+        color: "ebebeb"
+        user_id: Discourse.system_user.id
+        position: 54
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Knowledge Hub"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "How-To"
+        color: "ebebeb"
+        user_id: Discourse.system_user.id
+        position: 55
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Knowledge Hub"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Tools"
+        color: "ebebeb"
+        user_id: Discourse.system_user.id
+        position: 56
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Knowledge Hub"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+      - name: "Opensource"
+        color: "ebebeb"
+        user_id: Discourse.system_user.id
+        position: 57
+        default_list_filter: "all"
+        custom_fields:
+          only_post_voting_in_this_category: true
+          enable_accepted_answers: "true"
+        tag_groups:
+          - "Knowledge Hub"
+        security:
+          - group: "everyone"
+            permission_type: 1
+
+  # - name: "Knowledge Hub" # Edit
+  #   color: "B3B5B4" # Edit
+  #   user_id: Discourse.system_user.id
+  #   description: "A space for sharing technical articles, how-to guides, development tools, and best practices for knowledge sharing and learning." # Edit
+  #   position: 53 # Edit
+  #   show_subcategory_list: true
+  #   subcategory_list_style: "boxes_with_featured_topics"
+  #   default_list_filter: "all"
+  #   custom_fields:
+  #     only_post_voting_in_this_category: true
+  #     enable_accepted_answers: "true"
+  #   tag_groups:
+  #     - "Knowledge Hub" # Edit
+  #   security:
+  #     - group: "everyone"
+  #       permission_type: 1 # Edit (full: 1, create_post: 2, readonly: 3)
+  #   subcategories:
+  #     - name: "Case Study" # Edit
+  #       color: "ebebeb" # Edit
+  #       user_id: Discourse.system_user.id
+  #       position: 54 # Edit
+  #       default_list_filter: "all"
+  #       custom_fields:
+  #         only_post_voting_in_this_category: true
+  #         enable_accepted_answers: "true"
+  #       tag_groups:
+  #         - "Knowledge Hub" # Edit
+  #       security:
+  #         - group: "everyone"
+  #           permission_type: 1 # Edit (full: 1, create_post: 2, readonly: 3)
