@@ -35,7 +35,7 @@
     - pldm-fru
 
 - name: WebUI
-  one_per_topic: true
+  one_per_topic: false
   tags:
     - RBAC
     - UI-error
