@@ -95,6 +95,9 @@ volumes:
       host: /var/discourse/samples/tag_groups.yml
       guest: /shared/tag_groups.yml
   - volume:
+      host: /var/discourse/samples/categories.yml
+      guest: /shared/categories.yml
+  - volume:
       host: /var/discourse/shared/standalone/log/var-log
       guest: /var/log
   - volume:
@@ -127,4 +130,5 @@ run:
   - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-rest-settings.rb"
   - exec: cd /var/www/discourse && chown -R discourse:discourse /shared/icons && su discourse -c "bundle exec rails r /shared/scripts/apply-logo-settings.rb"
   - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-tags-groups.rb"
+  - exec: cd /var/www/discourse && su discourse -c "bundle exec rails r /shared/scripts/apply-categories.rb"
   - exec: echo "End of custom commands"

@@ -95,6 +95,9 @@ volumes:
       host: /var/discourse/samples/tag_groups.yml
       guest: /shared/tag_groups.yml
   - volume:
+      host: /var/discourse/samples/categories.yml
+      guest: /shared/categories.yml
+  - volume:
       host: /var/discourse/shared/standalone/log/var-log
       guest: /var/log
   - volume:
