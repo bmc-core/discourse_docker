@@ -50,7 +50,7 @@ SiteSetting.show_who_marked_solved = "true"
 SiteSetting.accept_all_solutions_allowed_groups = "1|2"
 #https://github.com/discourse/discourse/blob/main/config/site_settings.yml#L2233C3-L2233C27
 SiteSetting.flag_post_allowed_groups = "1|2"
-SiteSetting.title = "BMCCore forum"
+SiteSetting.title = "BMC Core Forum"
 SiteSetting.contact_email = "qq3025566@gmail.com"
 SiteSetting.site_description = "A community for developers and engineers working with BMC firmware — collaborate, ask questions, and share your knowledge."
 SiteSetting.short_site_description = "BMCCore - Collaborate, Ask questions, Share your knowledge."
