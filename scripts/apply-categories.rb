@@ -125,7 +125,26 @@ categories_data["categories"].each do |cat_data|
     end
   end
 end
+puts "========================================================"
 Category.find_by(name: "Staff").update!(position: 58)
+puts "[Category] Update Staff position to 58"
 Category.find_by(name: "General").update!(position: 59)
+puts "[Category] Update General position to 59"
 Category.find_by(name: "Site Feedback").update!(position: 60)
+puts "[Category] Update Site Feedback position to 60"
+
+# Remove Announcement from scorable categories
+category = Category.find_by(name: "Announcement")
+if category
+  ids = SiteSetting.scorable_categories.split("|").map(&:to_i)
+  if ids.delete(category.id)
+    SiteSetting.scorable_categories = ids.join("|")
+    puts "[Settings] scorable categories removed: #{category.name} (id: #{category.id})"
+  else
+    puts "[Settings] category ID not found in setting: #{category.id}"
+  end
+else
+  puts "[Settings] category not found: Announcement"
+end
+
 puts "========================================================\n Apply categories successful!"
