@@ -83,7 +83,7 @@ categories_data["categories"].each do |cat_data|
     parent_category = existing_parent
     update_category_attributes(parent_category, cat_data)
   else
-    puts "Creating category: #{cat_data["name"]}"
+    puts "[Category] Creating: #{cat_data["name"]}"
     parent_category = Category.create!(
       name: cat_data["name"],
       color: cat_data["color"],
@@ -110,7 +110,7 @@ categories_data["categories"].each do |cat_data|
         update_category_attributes(subcategory, sub_data)
         apply_category_settings(subcategory, sub_data)
       else
-        puts "Creating subcategory: #{sub_data["name"]}"
+        puts "[Subcategory] creating: #{sub_data["name"]}"
         subcategory = Category.create!(
           name: sub_data["name"],
           color: sub_data["color"],
