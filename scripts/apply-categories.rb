@@ -52,6 +52,17 @@ def update_category_attributes(category, data)
   )
 end
 
+def add_to_navigation_menu(category)
+  ids = SiteSetting.default_navigation_menu_categories.split("|").map(&:to_i)
+  unless ids.include?(category.id)
+    ids << category.id
+    SiteSetting.default_navigation_menu_categories = ids.join("|")
+    puts "[Category] added to navigation menu. (id: #{category.id})"
+  else
+    puts "[Category] already in navigation menu."
+  end
+end
+
 puts " "
 categories_data["categories"].each do |cat_data|
   existing_parent = Category.find_by(name: cat_data["name"])
@@ -61,6 +72,7 @@ categories_data["categories"].each do |cat_data|
     parent_category = existing_parent
     update_category_attributes(parent_category, cat_data)
     apply_category_settings(parent_category, cat_data)
+    add_to_navigation_menu(parent_category)
   else
     parent_category = Category.create!(
       name: cat_data["name"],
@@ -73,6 +85,7 @@ categories_data["categories"].each do |cat_data|
       default_list_filter: cat_data["default_list_filter"]
     )
     apply_category_settings(parent_category, cat_data)
+    add_to_navigation_menu(parent_category)
     puts "========================================================"
     puts "[Category] create successful: #{cat_data["name"]}"
   end
