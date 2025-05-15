@@ -57,23 +57,33 @@ def add_to_navigation_menu(category)
   unless ids.include?(category.id)
     ids << category.id
     SiteSetting.default_navigation_menu_categories = ids.join("|")
-    puts "[Category] added to navigation menu. (id: #{category.id})"
+    puts "[Settings] added to navigation menu. (id: #{category.id})"
   else
-    puts "[Category] already in navigation menu."
+    puts "[Settings] already in navigation menu."
+  end
+end
+
+def add_scorable_category(category)
+  ids = SiteSetting.scorable_categories.split("|").map(&:to_i)
+  unless ids.include?(category.id)
+    ids << category.id
+    SiteSetting.scorable_categories = ids.join("|")
+    puts "[Settings] added to scorable categories. (id: #{category.id})"
+  else
+    puts "[Settings] already in scorable categories."
   end
 end
 
 puts " "
 categories_data["categories"].each do |cat_data|
   existing_parent = Category.find_by(name: cat_data["name"])
+  puts "========================================================"
   if existing_parent
-    puts "========================================================"
     puts "[Category] already exists, skip create: #{cat_data["name"]}"
     parent_category = existing_parent
     update_category_attributes(parent_category, cat_data)
-    apply_category_settings(parent_category, cat_data)
-    add_to_navigation_menu(parent_category)
   else
+    puts "Creating category: #{cat_data["name"]}"
     parent_category = Category.create!(
       name: cat_data["name"],
       color: cat_data["color"],
@@ -84,11 +94,10 @@ categories_data["categories"].each do |cat_data|
       subcategory_list_style: cat_data["subcategory_list_style"],
       default_list_filter: cat_data["default_list_filter"]
     )
-    apply_category_settings(parent_category, cat_data)
-    add_to_navigation_menu(parent_category)
-    puts "========================================================"
-    puts "[Category] create successful: #{cat_data["name"]}"
   end
+  apply_category_settings(parent_category, cat_data)
+  add_to_navigation_menu(parent_category)
+  add_scorable_category(parent_category)
 
   # Create Subcategories
   if cat_data["subcategories"]
@@ -112,10 +121,11 @@ categories_data["categories"].each do |cat_data|
         )
       end
       apply_category_settings(subcategory, sub_data)
+      add_scorable_category(subcategory)
     end
   end
 end
 Category.find_by(name: "Staff").update!(position: 58)
 Category.find_by(name: "General").update!(position: 59)
 Category.find_by(name: "Site Feedback").update!(position: 60)
-puts "\n============= Apply categories successful ============="
+puts "========================================================\n Apply categories successful!"
