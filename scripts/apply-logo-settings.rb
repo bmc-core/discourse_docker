@@ -12,6 +12,9 @@ upload_creator = UploadCreator.new(file, "small_logo.png")
 upload = upload_creator.create_for(Discourse.system_user.id)
 SiteSetting.logo_small = upload
 
+# Mobile logo
+SiteSetting.mobile_logo = upload
+
 # favicon
 file_path = "/shared/icons/favicon.png"
 file = File.open(file_path)
