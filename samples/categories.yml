@@ -9,9 +9,6 @@ categories:
     show_subcategory_list: true
     subcategory_list_style: "boxes_with_featured_topics"
     default_list_filter: "all"
-    custom_fields:
-      only_post_voting_in_this_category: true
-      enable_accepted_answers: "true"
     tag_groups:
       - "Announcement"
     security:

@@ -132,6 +132,8 @@ Category.find_by(name: "General").update!(position: 59)
 puts "[Category] Update General position to 59"
 Category.find_by(name: "Site Feedback").update!(position: 60)
 puts "[Category] Update Site Feedback position to 60"
+CategoryCustomField.where(category_id: Category.find_by(name: 'Announcement').id).destroy_all
+puts "[Category] Removed Announcement custom fields"
 
 # Remove Announcement from scorable categories
 category = Category.find_by(name: "Announcement")
